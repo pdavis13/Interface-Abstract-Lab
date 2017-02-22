@@ -33,7 +33,7 @@ public class Course {
 
     public final void setPrerequisites(List<Course> prerequisites) {
         if(prerequisites == null) {
-            throw new IllegalArgumentException("invalid credit amount");
+            throw new IllegalArgumentException("Prerequisites cannot be null");
         }
         this.prerequisites = prerequisites;
     }
@@ -52,7 +52,7 @@ public class Course {
 
     public final void setCredits(double credits) {
         if(credits < 0 || credits > 4.0) {
-            throw new IllegalArgumentException("invalid credit amount");
+            throw new IllegalArgumentException("Invalid credit amount");
         }
         this.credits = credits;
     }
