@@ -31,11 +31,9 @@ public class Course {
         return prerequisites;
     }
 
-    public void setPrerequisites(List<Course> prerequisites) {
+    public final void setPrerequisites(List<Course> prerequisites) {
         if(prerequisites == null) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: prerequisites cannot be null");
-            System.exit(0);
+            throw new IllegalArgumentException("invalid credit amount");
         }
         this.prerequisites = prerequisites;
     }
@@ -44,7 +42,7 @@ public class Course {
         return courseNumber;
     }
 
-    public void setCourseNumber(String courseNumber) {
+    public final void setCourseNumber(String courseNumber) {
         this.courseNumber = courseNumber;
     }
 
@@ -52,11 +50,9 @@ public class Course {
         return credits;
     }
 
-    public void setCredits(double credits) {
+    public final void setCredits(double credits) {
         if(credits < 0 || credits > 4.0) {
-            JOptionPane.showMessageDialog(null,
-                    "Error: credits must be in the range 0.5 to 4.0");
-            System.exit(0);
+            throw new IllegalArgumentException("invalid credit amount");
         }
         this.credits = credits;
     }
